@@ -34,13 +34,16 @@ public final class Bag<E> : Sequence {
     /// Returns true if this bag is empty.
     public func isEmpty() -> Bool {
         // MARK: - TODO
-        return false
+        return first == nil
     }
     
     /// Adds the item to this bag. (front)
     /// - Parameter item: the item to add to this bag
     public func add(item: E) {
         // MARK: - TODO
+        let old = first
+        first = Node(item: item, next: old)
+        count += 1
     }
     
     
@@ -51,10 +54,15 @@ public final class Bag<E> : Sequence {
         
         fileprivate init(_ first: Node<E>?) {
             // MARK: - TODO
+            current = first
         }
         
         public mutating func next() -> E? {
             // MARK: - TODO
+            if let item = current?.item {
+                current = current?.next
+                return item
+            }
             return nil
         }
         
