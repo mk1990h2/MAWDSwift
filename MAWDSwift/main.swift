@@ -51,16 +51,27 @@ Test for Stack
 /**
 Test for Queue
 */
-var nums = Queue<Int>()
-nums.enqueue(item: 1)
-nums.enqueue(item: 2)
-nums.enqueue(item: 3)
-print("nums: \(nums)")
-print("peek: \(nums.peek()!)")
-print("dequeue: \(nums.dequeue()!)")
-print("nums: \(nums)")
+//var nums = Queue<Int>()
+//nums.enqueue(item: 1)
+//nums.enqueue(item: 2)
+//nums.enqueue(item: 3)
+//print("nums: \(nums)")
+//print("peek: \(nums.peek()!)")
+//print("dequeue: \(nums.dequeue()!)")
+//print("nums: \(nums)")
+//
+//print("loop")
+//for num in nums {
+//    print(num)
+//}
 
-print("loop")
-for num in nums {
-    print(num)
-}
+
+// File.swift
+//let path1 = "file:///home/shouhei/Documents/19-CICCC/swifty/DS-Algorithms-Assighment/file-system-crawler/File.swift"
+// dir1
+//let path2 = "/home/shouhei/Documents/19-CICCC/swifty/DS-Algorithms-Assighment/file-system-crawler/dir1"
+let path2 = "/Users/mika_sato/Desktop"
+//let path3 = "/home/shouhei/Documents/19-CICCC/swifty"
+
+crawl(path: path2)
+
