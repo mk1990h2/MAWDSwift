@@ -67,11 +67,7 @@ Test for Queue
 
 
 // File.swift
-//let path1 = "file:///home/shouhei/Documents/19-CICCC/swifty/DS-Algorithms-Assighment/file-system-crawler/File.swift"
-// dir1
-//let path2 = "/home/shouhei/Documents/19-CICCC/swifty/DS-Algorithms-Assighment/file-system-crawler/dir1"
-let path2 = "/Users/mika_sato/Desktop"
-//let path3 = "/home/shouhei/Documents/19-CICCC/swifty"
-
-crawl(path: path2)
-
+//let path2 = "/Users/mika_sato/Desktop"
+//crawl(path: path2)
+var board = Board()
+solve8Queens(board: &board)
