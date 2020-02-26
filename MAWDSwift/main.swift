@@ -69,5 +69,44 @@ Test for Queue
 // File.swift
 //let path2 = "/Users/mika_sato/Desktop"
 //crawl(path: path2)
-var board = Board()
-solve8Queens(board: &board)
+//var board = Board()
+//solve8Queens(board: &board)
+
+//7
+//A B C
+//B D .
+//C E F
+//E . .
+//F . G
+//D . .
+//G . .
+
+//treeTraversal()
+
+//var childeren3 = [MultipleTreeNode<Int>]()
+//var childeren1 = [MultipleTreeNode<Int>]()
+//childeren3.append(MultipleTreeNode<Int>(val: 5))
+//childeren3.append(MultipleTreeNode<Int>(val: 6))
+//childeren1.append(MultipleTreeNode<Int>(val: 3, children: childeren3))
+//childeren1.append(MultipleTreeNode<Int>(val: 2))
+//childeren1.append(MultipleTreeNode<Int>(val: 4))
+//
+//var root = MultipleTreeNode<Int>(val: 1, children: childeren1)
+//
+//print(preorder(root))
+//print(postorder(root))
+
+//var left = BinaryTreeNode(2)
+//var right = BinaryTreeNode(3)
+//var root = BinaryTreeNode(1)
+//
+//print(preorderTraversal(root))
+
+/**
+Presentation
+*/
+
+
+//whosMyParent()
+//checkBipartiteGraph()
+findLCA()
