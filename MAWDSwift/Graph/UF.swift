@@ -75,10 +75,10 @@ public struct UF {
         let qroot = find(q)
         if size[proot] > size[qroot] {
             parent[qroot] = proot
-            size[proot] += 1
+            size[proot] += size[qroot]
         } else {
             parent[proot] = qroot
-            size[qroot] += 1
+            size[qroot] += size[proot]
         }
     }
 }
