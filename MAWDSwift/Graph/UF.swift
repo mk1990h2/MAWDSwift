@@ -73,12 +73,15 @@ public struct UF {
         // TODO
         let proot = find(p)
         let qroot = find(q)
-        if size[proot] > size[qroot] {
-            parent[qroot] = proot
-            size[proot] += size[qroot]
-        } else {
-            parent[proot] = qroot
-            size[qroot] += size[proot]
+        if proot != qroot {
+            if size[proot] > size[qroot] {
+                parent[qroot] = proot
+                size[proot] += size[qroot]
+            } else {
+                parent[proot] = qroot
+                size[qroot] += size[proot]
+            }
+            count -= 1
         }
     }
 }
