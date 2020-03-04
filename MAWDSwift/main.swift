@@ -116,4 +116,12 @@ Presentation
 
 
 //countCyclicPermutation()
-findRepeatingSequence()
+//findRepeatingSequence()
+
+//floodFill()
+
+//findMinimalWay()
+
+//tomatoFarm()
+
+Bridges()

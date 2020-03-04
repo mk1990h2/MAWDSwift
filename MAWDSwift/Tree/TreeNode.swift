@@ -28,4 +28,3 @@ class MultipleTreeNode<Int> {
         self.children = children
     }
 }
-

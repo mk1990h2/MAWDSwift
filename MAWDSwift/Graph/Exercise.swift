@@ -90,3 +90,44 @@ func colorDfs(start: Int, visited: inout [Bool], adjList: inout [[Int]], colorLi
 //1 3
 //2 3
 
+/**
+ Flood Fill
+ */
+func floodFill() {
+    let n = Int(readLine()!)!
+    var union = UF(n*n)
+    var map = [Character]()
+    var noGroup = -1
+    
+    for i in 0..<n {
+        map += Array(String(readLine()!))
+        for j in 0..<n {
+            if map[n*i+j] == "0" {
+                if noGroup == -1 {
+                    noGroup = n*i+j
+                } else {
+                    union.union(n*i+j, noGroup)
+                }
+                continue
+            }
+            // check whether it's connected to the vertically adjasent element
+            if i != 0 {
+                if map[n*i+j] == "1" && map[n*(i-1)+j] == "1" {
+                    union.union(n*i+j, n*(i-1)+j)
+                }
+            }
+            // check whether it's connected to the horizontally adjasent element
+            if j != 0 {
+                if map[n*i+j] == "1" && map[n*i+j-1] == "1" {
+                    union.union((n*i+j), (n*i+j-1))
+                }
+            }
+        }
+    }
+    print(union.count - 1)
+    for i in 0..<union.size.count {
+        if union.size[i] != 1 && i != Int(noGroup) {
+            print(union.size[i])
+        }
+    }
+}

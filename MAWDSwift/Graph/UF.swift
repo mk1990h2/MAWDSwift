@@ -23,7 +23,7 @@ public struct UF {
     /// parent[i] = parent of i
     private var parent: [Int]
     /// size[i] = number of nodes in tree rooted at i
-    private var size: [Int]
+    private(set) var size: [Int]
     /// number of components
     private(set) var count: Int
     
@@ -77,9 +77,11 @@ public struct UF {
             if size[proot] > size[qroot] {
                 parent[qroot] = proot
                 size[proot] += size[qroot]
+                size[qroot] = 1
             } else {
                 parent[proot] = qroot
                 size[qroot] += size[proot]
+                size[proot] = 1
             }
             count -= 1
         }
