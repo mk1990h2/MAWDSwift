@@ -32,64 +32,6 @@ func twoCitySchedCost(_ costs: [[Int]]) -> Int {
 }
 
 /**
- https://leetcode.com/problems/task-scheduler/
- */
-func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
-    if n == 0 {
-        return tasks.count
-    }
-    var tasksCount = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 26)
-    for task in tasks {
-        let num = Int(task.asciiValue!) - 65
-        tasksCount[num][0] = num
-        tasksCount[num][1] += 1
-    }
-    tasksCount = tasksCount.filter{ $0[1] > 0 }
-    var total = 0
-    
-    // create the max number of groups which has n elements
-    while !tasksCount.isEmpty {
-        tasksCount.sort{ $0[1] > $1[1] }
-        let max = tasksCount[0][1]
-        tasksCount.remove(at: 0)
-
-        for i in 0..<max {
-            let elementCount = tasksCount.count
-            if elementCount == 0 {
-                // there is no more element
-                if i == max - 1 {
-                    // max element has been used
-                    total += 1
-                } else {
-                    // max element is still remained
-                    total += n + 1
-                }
-            } else {
-                var count = 0
-                // Reduce 1 from each element which is used
-                tasksCount = tasksCount.map{
-                    if count < n {
-                        count += 1
-                        return [$0[0], $0[1] - 1]
-                    } else {
-                        return $0
-                    }
-                }
-                tasksCount = tasksCount.filter{ $0[1] > 0 }
-                if i == max - 1 && tasksCount.count == 0{
-                    // all elements has been used
-                    total += elementCount + 1
-                } else {
-                    total += n + 1
-                }
-            }
-        }
-    }
-    
-    return total
-}
-
-/**
  https://leetcode.com/problems/gas-station/
  */
 func canCompleteCircuit(_ gas: [Int], _ cost: [Int]) -> Int {
@@ -156,10 +98,11 @@ func scheduleCourse(_ courses: [[Int]]) -> Int {
     }
     deadlines.sort{ $0[1] > $1[1] }
 
-    var max = 0
+    // TODO
+    
     
 
     
-    return count
+    return 0
 }
 
